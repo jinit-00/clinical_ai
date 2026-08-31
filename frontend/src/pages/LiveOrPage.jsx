@@ -343,9 +343,6 @@ export const LiveOrPage = () => {
             <div className="video-white-overlay"></div>
             <div className="video-overlay-badge">REC ● OR FEED</div>
           </div>
-          <div className="video-disclaimer-tag">
-            Video for atmosphere only — not analyzed by the AI
-          </div>
         </div>
       </div>
 
