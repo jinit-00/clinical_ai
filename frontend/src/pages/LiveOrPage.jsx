@@ -55,26 +55,6 @@ export const LiveOrPage = () => {
     }
   }, []);
 
-  const selectFemaleVoice = () => {
-    if (!('speechSynthesis' in window)) return null;
-    const voices = window.speechSynthesis.getVoices();
-    const femaleVoice = voices.find(v => 
-      v.lang.startsWith('en') && (
-        v.name.toLowerCase().includes('female') ||
-        v.name.toLowerCase().includes('samantha') ||
-        v.name.toLowerCase().includes('victoria') ||
-        v.name.toLowerCase().includes('karen') ||
-        v.name.toLowerCase().includes('zira') ||
-        v.name.toLowerCase().includes('google us english') ||
-        v.name.toLowerCase().includes('fiona') ||
-        v.name.toLowerCase().includes('siri') ||
-        v.name.toLowerCase().includes('jenny') ||
-        v.name.toLowerCase().includes('aria')
-      )
-    );
-    return femaleVoice || voices.find(v => v.lang.startsWith('en')) || null;
-  };
-
   const speakText = (textToSpeak) => {
     if (!textToSpeak) return;
     if (!('speechSynthesis' in window)) return;
@@ -84,16 +64,21 @@ export const LiveOrPage = () => {
       window.speechSynthesis.cancel();
 
       const utterance = new SpeechSynthesisUtterance(textToSpeak);
-      const femaleVoice = selectFemaleVoice();
-      if (femaleVoice) {
-        utterance.voice = femaleVoice;
+      const voices = window.speechSynthesis.getVoices();
+
+      if (voices && voices.length > 0) {
+        const preferredVoice = voices.find(v => v.lang.startsWith('en')) || null;
+        if (preferredVoice) {
+          utterance.voice = preferredVoice;
+        }
       }
-      utterance.pitch = 1.15;
+
+      utterance.pitch = 1.0;
       utterance.rate = 1.0;
 
       utterance.onstart = () => {
         setIsSpeaking(true);
-        setAssistantStatus('SPEAKING (Female Voice Output)');
+        setAssistantStatus('SPEAKING (Audio Output)');
       };
       utterance.onend = () => {
         setIsSpeaking(false);
@@ -296,7 +281,7 @@ export const LiveOrPage = () => {
             <span className="status-text">Live Assistant Status: <strong>{assistantStatus}</strong></span>
           </div>
 
-          <AudioWaveformIndicator isSpeaking={isSpeaking} label="Female Assistant Speaking..." />
+          <AudioWaveformIndicator isSpeaking={isSpeaking} label="Assistant Speaking..." />
         </div>
 
         {heardSpeechText && (

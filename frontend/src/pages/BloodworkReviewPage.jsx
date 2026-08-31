@@ -32,7 +32,6 @@ export const BloodworkReviewPage = () => {
     "Summarize out loud"
   ];
 
-  // Pre-load voices on component mount
   useEffect(() => {
     if ('speechSynthesis' in window) {
       window.speechSynthesis.getVoices();
@@ -95,26 +94,13 @@ export const BloodworkReviewPage = () => {
       const voices = window.speechSynthesis.getVoices();
 
       if (voices && voices.length > 0) {
-        const femaleVoice = voices.find(v => 
-          v.lang.startsWith('en') && (
-            v.name.toLowerCase().includes('female') ||
-            v.name.toLowerCase().includes('samantha') ||
-            v.name.toLowerCase().includes('victoria') ||
-            v.name.toLowerCase().includes('karen') ||
-            v.name.toLowerCase().includes('zira') ||
-            v.name.toLowerCase().includes('google us english') ||
-            v.name.toLowerCase().includes('fiona') ||
-            v.name.toLowerCase().includes('siri') ||
-            v.name.toLowerCase().includes('jenny') ||
-            v.name.toLowerCase().includes('aria')
-          )
-        );
-        if (femaleVoice) {
-          utterance.voice = femaleVoice;
+        const preferredVoice = voices.find(v => v.lang.startsWith('en')) || null;
+        if (preferredVoice) {
+          utterance.voice = preferredVoice;
         }
       }
 
-      utterance.pitch = 1.15;
+      utterance.pitch = 1.0;
       utterance.rate = 1.0;
 
       utterance.onstart = () => setIsSpeaking(true);
@@ -309,9 +295,9 @@ export const BloodworkReviewPage = () => {
             <div className="voice-qa-header">
               <div className="voice-title-group">
                 <Mic size={20} className="mic-icon" />
-                <h4 className="voice-title">🎙 Ask the Report (Female Voice Clinical Assistant)</h4>
+                <h4 className="voice-title">🎙 Ask the Report (Clinical Voice Assistant)</h4>
               </div>
-              <AudioWaveformIndicator isSpeaking={isSpeaking} label="Female Assistant Speaking..." />
+              <AudioWaveformIndicator isSpeaking={isSpeaking} label="Assistant Speaking..." />
             </div>
 
             <div className="chips-row">
@@ -366,7 +352,7 @@ export const BloodworkReviewPage = () => {
             {voiceResponse && (
               <div className="spoken-response-box">
                 <div className="spoken-response-header">
-                  <Volume2 size={16} /> <strong>Female Assistant Spoken Response:</strong>
+                  <Volume2 size={16} /> <strong>Assistant Spoken Response:</strong>
                   <button
                     onClick={() => speakText(voiceResponse)}
                     className="btn-replay-speech"

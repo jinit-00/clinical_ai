@@ -70,26 +70,13 @@ export const ConsultationPage = () => {
       const voices = window.speechSynthesis.getVoices();
 
       if (voices && voices.length > 0) {
-        const femaleVoice = voices.find(v => 
-          v.lang.startsWith('en') && (
-            v.name.toLowerCase().includes('female') ||
-            v.name.toLowerCase().includes('samantha') ||
-            v.name.toLowerCase().includes('victoria') ||
-            v.name.toLowerCase().includes('karen') ||
-            v.name.toLowerCase().includes('zira') ||
-            v.name.toLowerCase().includes('google us english') ||
-            v.name.toLowerCase().includes('fiona') ||
-            v.name.toLowerCase().includes('siri') ||
-            v.name.toLowerCase().includes('jenny') ||
-            v.name.toLowerCase().includes('aria')
-          )
-        );
-        if (femaleVoice) {
-          utterance.voice = femaleVoice;
+        const preferredVoice = voices.find(v => v.lang.startsWith('en')) || null;
+        if (preferredVoice) {
+          utterance.voice = preferredVoice;
         }
       }
 
-      utterance.pitch = 1.15;
+      utterance.pitch = 1.0;
       utterance.rate = 1.0;
 
       utterance.onstart = () => setIsSpeaking(true);
@@ -258,10 +245,10 @@ export const ConsultationPage = () => {
         <div className="session-status-row">
           <div className="session-status-banner">
             <div className="live-indicator-dot"></div>
-            <span>{isRecording ? "Live Audio Session Active (Female Voice Clinical Assistant)" : "Session Paused / Ended"}</span>
+            <span>{isRecording ? "Live Audio Session Active (Clinical Voice Assistant)" : "Session Paused / Ended"}</span>
           </div>
 
-          <AudioWaveformIndicator isSpeaking={isSpeaking} label="Female Assistant Speaking..." />
+          <AudioWaveformIndicator isSpeaking={isSpeaking} label="Assistant Speaking..." />
         </div>
       </ClinicalCard>
 
@@ -269,7 +256,7 @@ export const ConsultationPage = () => {
       <div className="voice-assistant-bar">
         <div className="assistant-bar-header">
           <MessageSquare size={18} className="assistant-icon" />
-          <span className="assistant-bar-title">🎙 Interactive Spoken Assistant (Female Voice Response)</span>
+          <span className="assistant-bar-title">🎙 Interactive Spoken Assistant (Clinical Voice Response)</span>
         </div>
 
         <div className="chips-btn-group">
@@ -308,7 +295,7 @@ export const ConsultationPage = () => {
             disabled={!voiceQuery.trim() || loading}
             className="btn-ask-consultation"
           >
-            <Volume2 size={14} /> Ask Female Voice
+            <Volume2 size={14} /> Ask Voice
           </button>
         </div>
 
@@ -324,7 +311,7 @@ export const ConsultationPage = () => {
               <div key={idx} className="log-item">
                 <span className="log-q">Q: {log.query}</span>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                  <span className="log-a">👩‍⚕️ {log.response}</span>
+                  <span className="log-a">🤖 {log.response}</span>
                   <button
                     onClick={() => speakText(log.response)}
                     style={{ background: 'none', border: 'none', cursor: 'pointer', color: 'var(--accent-safe)', display: 'flex', alignItems: 'center', gap: '3px', fontSize: '0.75rem' }}

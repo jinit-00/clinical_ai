@@ -99,7 +99,7 @@ Instructions:
         Outputs ONLY 1 short sentence answering what was asked directly.
         """
         prompt = f"""
-You are a voice assistant in a clinical consultation session.
+You are a clinical voice assistant in a consultation session.
 Answer ONLY the specific question asked below using the session context.
 
 Transcript & Prescriptions:

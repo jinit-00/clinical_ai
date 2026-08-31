@@ -173,7 +173,7 @@ async def bloodwork_voice_query(payload: BloodworkVoiceQueryRequest):
         raise HTTPException(status_code=400, detail="No question provided.")
 
     prompt = f"""
-You are a voice assistant answering a question about a blood report for {payload.patient_name} ({payload.patient_age}yo {payload.patient_sex}).
+You are a clinical voice assistant answering a question about a blood report for {payload.patient_name} ({payload.patient_age}yo {payload.patient_sex}).
 
 Lab Data:
 {json.dumps(payload.evaluated_labs, indent=2)}
