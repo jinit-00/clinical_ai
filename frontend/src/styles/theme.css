@@ -1,0 +1,98 @@
+/* Global Theme & CSS Variables for Clinical AI Copilot */
+:root {
+  /* Strict Palette Constraints */
+  --bg-color: #F1EAD9;          /* Warm beige background */
+  --bg-surface: #E6DECD;        /* Card & Sidebar surface */
+  --bg-surface-elevated: #DCD3C1; /* Elevated card surface */
+  --bg-surface-active: #D1C8B4; /* Active item background */
+  
+  --text-color: #2E2B28;        /* Charcoal main text */
+  --text-muted: #5E5851;        /* Muted secondary text */
+  --text-dim: #7E766C;          /* Dim captions */
+  --text-light: #FAF6ED;        /* Warm light text for dark buttons */
+  
+  --accent-warn: #B5654A;       /* Muted terracotta (warning/critical) */
+  --accent-warn-bg: #E9D2C8;    /* Muted terracotta light tint */
+  
+  --accent-safe: #6E7F5C;       /* Muted sage (normal/safe) */
+  --accent-safe-bg: #D9E1D2;    /* Muted sage light tint */
+  
+  --accent-info: #4E6E82;       /* Slate blue for informational tags */
+  --accent-info-bg: #D1DEE5;
+  
+  --border-color: #D3C9B5;      /* Warm border */
+  --border-strong: #BCB19A;
+  
+  /* Layout Geometry & Typography */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  
+  --shadow-sm: 0 2px 4px rgba(46, 43, 40, 0.04);
+  --shadow-md: 0 4px 12px rgba(46, 43, 40, 0.08);
+
+  --font-serif: 'Lora', 'Source Serif 4', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-sans);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+/* Headings Typography Pass */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  color: var(--text-color);
+  letter-spacing: -0.01em;
+}
+
+/* App Container Layout */
+.app-container {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background-color: var(--bg-color);
+}
+
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.content-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 24px 32px 90px 32px;
+}
+
+/* Scrollbar styling matching beige palette */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}

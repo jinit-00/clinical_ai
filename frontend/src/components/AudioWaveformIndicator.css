@@ -1,0 +1,46 @@
+.audio-waveform-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: var(--accent-safe-bg);
+  border: 1px solid var(--accent-safe);
+  padding: 6px 14px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-sm);
+}
+
+.volume-icon {
+  color: var(--accent-safe);
+}
+
+.waveform-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--accent-safe);
+}
+
+.waveform-bars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 16px;
+}
+
+.bar {
+  width: 3px;
+  height: 100%;
+  background-color: var(--accent-safe);
+  border-radius: 2px;
+  animation: bounce-wave 0.8s ease-in-out infinite alternate;
+}
+
+.bar1 { animation-delay: 0.1s; }
+.bar2 { animation-delay: 0.3s; }
+.bar3 { animation-delay: 0.2s; }
+.bar4 { animation-delay: 0.4s; }
+.bar5 { animation-delay: 0.15s; }
+
+@keyframes bounce-wave {
+  0% { transform: scaleY(0.2); }
+  100% { transform: scaleY(1.0); }
+}

@@ -1,0 +1,85 @@
+.lab-table-container {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+}
+
+.lab-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.9rem;
+}
+
+.lab-table th {
+  background-color: var(--bg-surface-elevated);
+  color: var(--text-muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.lab-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-color);
+}
+
+.lab-table tr:last-child td {
+  border-bottom: none;
+}
+
+.lab-table tr.row-alert {
+  background-color: rgba(181, 101, 74, 0.05);
+}
+
+.test-name-cell {
+  color: var(--text-color);
+}
+
+.val-pill {
+  font-family: var(--font-family-mono);
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: var(--radius-sm);
+}
+
+.val-pill.flag-normal {
+  background-color: var(--accent-safe-bg);
+  color: var(--accent-safe);
+}
+
+.val-pill.flag-alert {
+  background-color: var(--accent-warn-bg);
+  color: var(--accent-warn);
+}
+
+.unit-cell, .range-cell, .category-cell {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.flag-badge {
+  font-family: var(--font-family-mono);
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.flag-badge.flag-normal {
+  background-color: var(--accent-safe-bg);
+  color: var(--accent-safe);
+}
+
+.flag-badge.flag-alert {
+  background-color: var(--accent-warn-bg);
+  color: var(--accent-warn);
+}

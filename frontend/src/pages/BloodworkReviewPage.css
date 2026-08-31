@@ -1,0 +1,290 @@
+.bloodwork-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.bloodwork-controls {
+  display: flex;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.btn-analyze-bloodwork {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background-color: var(--accent-safe);
+  color: var(--text-light);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-analyze-bloodwork:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.bloodwork-results-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Voice Q&A Card Styling */
+.voice-qa-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-left: 6px solid var(--accent-safe);
+  border-radius: var(--radius-md);
+  padding: 20px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  box-shadow: var(--shadow-sm);
+}
+
+.voice-qa-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.voice-title-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mic-icon {
+  color: var(--accent-safe);
+}
+
+.voice-title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.chips-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.chips-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.voice-chips-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.voice-chip-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background-color: var(--bg-surface-elevated);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.voice-chip-btn:hover {
+  background-color: var(--accent-safe-bg);
+  border-color: var(--accent-safe);
+}
+
+.voice-input-row {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-mic-listen {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background-color: var(--accent-warn);
+  color: var(--text-light);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-mic-listen.listening {
+  background-color: var(--accent-critical, #B5654A);
+  animation: pulse-red 1.2s infinite alternate;
+}
+
+@keyframes pulse-red {
+  0% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+.mic-status-banner {
+  background-color: var(--accent-safe-bg);
+  color: var(--accent-safe);
+  border: 1px solid var(--accent-safe);
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.voice-text-input {
+  flex: 1;
+  background-color: var(--bg-color);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  padding: 8px 14px;
+  font-size: 0.875rem;
+  color: var(--text-color);
+  outline: none;
+}
+
+.btn-ask-voice {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background-color: var(--accent-safe);
+  color: var(--text-light);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.spoken-response-box {
+  background-color: var(--accent-safe-bg);
+  border: 1px solid var(--accent-safe);
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.spoken-response-header {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--accent-safe);
+}
+
+.spoken-response-text {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  line-height: 1.5;
+}
+
+/* Tab Navigation */
+.tab-navigation-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-surface);
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.tab-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background-color: var(--bg-surface-elevated);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  background-color: var(--accent-safe-bg);
+  border-color: var(--accent-safe);
+  color: var(--accent-safe);
+}
+
+.btn-download-pdf {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background-color: var(--accent-warn);
+  color: var(--text-light);
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.doctor-report-view, .patient-summary-view {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.doctor-report-line, .patient-summary-line {
+  margin-bottom: 8px;
+  line-height: 1.6;
+}
+
+.flagged-cards-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.flagged-item-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.flagged-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: var(--accent-warn);
+}
+
+.alert-icon {
+  color: var(--accent-warn);
+}
+
+.flagged-desc {
+  font-size: 0.9rem;
+  color: var(--text-color);
+}

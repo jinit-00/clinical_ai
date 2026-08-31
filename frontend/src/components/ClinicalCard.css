@@ -1,0 +1,74 @@
+.clinical-card {
+  background-color: var(--bg-surface);
+  border-radius: var(--radius-md);
+  border-left: 6px solid var(--accent-safe); /* default sage border */
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  padding: 20px 24px;
+  margin-bottom: 20px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.clinical-card.status-warning {
+  border-left-color: var(--accent-warn); /* terracotta border */
+}
+
+.clinical-card.status-normal {
+  border-left-color: var(--accent-safe); /* sage border */
+}
+
+.clinical-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.clinical-card-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--text-color);
+  letter-spacing: -0.01em;
+}
+
+.clinical-card-subtitle {
+  font-size: 0.875rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.clinical-card-header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.status-badge {
+  font-family: var(--font-family-mono);
+  font-size: 0.725rem;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.status-badge.status-normal {
+  background-color: var(--accent-safe-bg);
+  color: var(--accent-safe);
+}
+
+.status-badge.status-warning {
+  background-color: var(--accent-warn-bg);
+  color: var(--accent-warn);
+}
+
+.clinical-card-body {
+  color: var(--text-color);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}

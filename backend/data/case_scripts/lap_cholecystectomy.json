@@ -1,0 +1,76 @@
+{
+  "id": "lap_chole",
+  "title": "Laparoscopic Cholecystectomy",
+  "specialty": "General Surgery",
+  "patient": {
+    "name": "Eleanor Vance",
+    "age": 68,
+    "sex": "Female",
+    "ebv_ml": 4200,
+    "allergies": ["Penicillin (Anaphylaxis)", "Sulfa Drugs"],
+    "medications": ["Lisinopril 10mg daily", "Amlodipine 5mg daily"],
+    "history": "Symptomatic cholelithiasis, essential hypertension"
+  },
+  "timeline": [
+    {
+      "phase_id": 0,
+      "t": "00:00",
+      "phase": "Pre-op Briefing & Patient Positioning",
+      "vitals": { "hr": 76, "bp": "124/82", "spo2": 99 },
+      "narration": "Patient positioned in supine. General anesthesia established. Surgical timeout pending.",
+      "visible_findings": "N/A — pre-incision",
+      "blood_loss_ml": 0,
+      "danger_zone": "Trocar insertion site, inferior epigastric vessels"
+    },
+    {
+      "phase_id": 1,
+      "t": "00:15",
+      "phase": "WHO Surgical Safety Timeout",
+      "vitals": { "hr": 78, "bp": "120/78", "spo2": 98 },
+      "narration": "WHO Timeout executed. Patient identity, procedure site (gallbladder), and penicillin allergy verified.",
+      "visible_findings": "Pneumoperitoneum established at 12 mmHg",
+      "blood_loss_ml": 10,
+      "danger_zone": "Umbilical trocar entry"
+    },
+    {
+      "phase_id": 2,
+      "t": "00:40",
+      "phase": "Vascular & Calot's Triangle Dissection",
+      "vitals": { "hr": 88, "bp": "114/74", "spo2": 97 },
+      "narration": "Dissecting peritoneum over Calot's triangle. Critical View of Safety (CVS) being established.",
+      "visible_findings": "Cystic artery identified; cystic duct isolated; mild venous oozing at the gallbladder bed",
+      "blood_loss_ml": 50,
+      "danger_zone": "Common Bile Duct (CBD), Right Hepatic Artery"
+    },
+    {
+      "phase_id": 3,
+      "t": "01:10",
+      "phase": "Complication — Cystic Artery Bleeding",
+      "vitals": { "hr": 112, "bp": "92/58", "spo2": 94 },
+      "narration": "Unexpected arterial clip avulsion causing rapid arterial bleeding near the cystic pedicle. Suction engaged.",
+      "visible_findings": "Active pulsatile arterial bleeding near porta hepatis; field obscured by pooled blood",
+      "blood_loss_ml": 750,
+      "danger_zone": "Porta hepatis, Common Hepatic Duct"
+    },
+    {
+      "phase_id": 4,
+      "t": "01:30",
+      "phase": "Hemostasis & Clipping of Cystic Artery",
+      "vitals": { "hr": 94, "bp": "106/68", "spo2": 97 },
+      "narration": "Attracting force applied. Hemoclip placed on proximal cystic artery. Hemostasis achieved. Irrigation clear.",
+      "visible_findings": "Cystic artery securely clipped twice; clear field; no bile leak observed",
+      "blood_loss_ml": 820,
+      "danger_zone": "Cystic duct stump"
+    },
+    {
+      "phase_id": 5,
+      "t": "02:00",
+      "phase": "Specimen Removal & Closure",
+      "vitals": { "hr": 80, "bp": "118/76", "spo2": 99 },
+      "narration": "Gallbladder extracted in endobag via umbilical port. Fascia sutured. Skin closed with subcuticular sutures.",
+      "visible_findings": "Specimen intact in pouch; port sites clean and dry",
+      "blood_loss_ml": 830,
+      "danger_zone": "Port site hernia risk"
+    }
+  ]
+}

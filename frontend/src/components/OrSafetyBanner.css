@@ -1,0 +1,25 @@
+.or-safety-banner {
+  width: 100%;
+  background-color: var(--accent-warn-bg);
+  border: 2px solid var(--accent-warn);
+  border-radius: var(--radius-md);
+  padding: 12px 18px;
+  margin-bottom: 20px;
+}
+
+.safety-banner-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.safety-banner-icon {
+  color: var(--accent-warn);
+  flex-shrink: 0;
+}
+
+.safety-banner-text {
+  font-size: 0.875rem;
+  color: var(--text-color);
+  line-height: 1.45;
+}
