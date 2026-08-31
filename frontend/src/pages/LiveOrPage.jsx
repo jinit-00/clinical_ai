@@ -340,6 +340,7 @@ export const LiveOrPage = () => {
         <div className="decorative-video-box">
           <div className="video-viewport image-active">
             <img src="/or_feed_demo.jpeg" alt="OR Feed Simulation" className="or-video-image" />
+            <div className="video-white-overlay"></div>
             <div className="video-overlay-badge">REC ● OR FEED</div>
           </div>
           <div className="video-disclaimer-tag">
