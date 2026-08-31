@@ -59,38 +59,6 @@ A portfolio-grade, clinical decision-support web application featuring multi-mod
 
 ---
 
-## 🚀 Quickstart & Local Setup
-
-### Prerequisites
-- Python >= 3.10
-- Node.js >= 18
-- Gemini API Key ([Get GEMINI_API_KEY from Google AI Studio](https://aistudio.google.com/))
-
-### 1. Environment Setup
-Create a `.env` file inside `/backend` (or set `GEMINI_API_KEY` in environment):
-```bash
-cp backend/.env.example backend/.env
-# Edit backend/.env and add your key:
-GEMINI_API_KEY="your_gemini_api_key_here"
-```
-
-### 2. Run Backend (FastAPI)
-```bash
-cd backend
-pip install -r requirements.txt
-python3 main.py
-```
-*Backend runs on `http://localhost:8000` (API Docs at `http://localhost:8000/docs`)*
-
-### 3. Run Frontend (Vite + React)
-```bash
-cd frontend
-npm install
-npm run dev
-```
-*Frontend app runs on `http://localhost:5173`*
-
----
 
 ## 🔒 Safety Statement
 Please review [SAFETY.md](file:///Users/jinitsoneji/Documents/health_hackathon/SAFETY.md) for full compliance details.
