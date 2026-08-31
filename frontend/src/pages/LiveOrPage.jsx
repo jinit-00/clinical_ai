@@ -338,9 +338,9 @@ export const LiveOrPage = () => {
 
         {/* Decorative Video Box */}
         <div className="decorative-video-box">
-          <div className="video-viewport">
-            <Video size={36} className="video-icon" />
-            <span className="video-label">OR Camera Feed Simulation</span>
+          <div className="video-viewport image-active">
+            <img src="/or_feed_demo.jpeg" alt="OR Feed Simulation" className="or-video-image" />
+            <div className="video-overlay-badge">REC ● OR FEED</div>
           </div>
           <div className="video-disclaimer-tag">
             Video for atmosphere only — not analyzed by the AI
